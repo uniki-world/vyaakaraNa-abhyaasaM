@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>విద్యార్థి వ్యాకరణ అభ్యాసోపకరణము</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#5c1a1a;
+    --ink-dark:#3a1010;
+    --navy:#16223c;
+    --navy-2:#1f2f52;
+    --gold:#c9982a;
+    --gold-light:#e0b23e;
+    --cream:#fff8e7;
+    --cream-edge:#f0e2c0;
+    --paper:#fffdf7;
+    --green:#2f7d4f;
+    --red:#b1493f;
+    --font-display:'Sree Krushnadevaraya','Noto Sans Telugu',sans-serif;
+    --font-telugu:'Mallanna','Noto Sans Telugu',sans-serif;
+  }
+  .font-note{
+    text-align:center;
+    font-family:'Poppins',sans-serif;
+    font-size:13px;
+    color:#8b97b5;
+    margin:-2px 0 18px;
+  }
+  .font-note a{ color:var(--gold); text-decoration:none; }
+  .font-note a:hover{ text-decoration:underline; }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0;
+    min-height:100vh;
+    font-family:'Poppins', sans-serif;
+    background:radial-gradient(circle at 50% 0%, var(--navy-2), var(--navy) 70%);
+    color:#222;
+    line-height:1.6;
+  }
+  .wrap{
+    max-width:900px;
+    margin:0 auto;
+    padding:36px 20px 60px;
+  }
+  header{
+    text-align:center;
+    margin-bottom:8px;
+  }
+  header .eyebrow{
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--gold);
+    margin-bottom:8px;
+  }
+  header h1{
+    font-family:var(--font-display);
+    font-size:40px;
+    margin:0 0 6px;
+    color:var(--cream);
+    line-height:1.3;
+  }
+  header p{
+    font-family:var(--font-telugu);
+    font-size:17px;
+    color:#c3cce3;
+    margin:0;
+  }
+
+  /* ---------- GANA LEGEND (chandassu only) ---------- */
+  #gana-legend{
+    display:none;
+    background:#0f1830;
+    border:1px solid #2c3d63;
+    border-radius:12px;
+    padding:16px 20px;
+    margin:16px 0 4px;
+    font-family:var(--font-telugu);
+    font-size:15px;
+    color:#c3cce3;
+    line-height:1.8;
+  }
+  #gana-legend b{ color:var(--gold); }
+  #gana-legend .legend-row{ margin-bottom:4px; }
+
+  .yati{ color:#3fa9c9; font-weight:700; }
+  .prasa{ color:#ff8a5c; font-weight:700; }
+  #gana-legend .yati, #gana-legend .prasa{ font-weight:700; }
+  .face .verse .yati{ color:#1a6b8c; }
+  .face .verse .prasa{ color:#b1493f; }
+  .legend-key{ margin-top:10px; font-size:14px; }
+  .legend-key .yati{ color:#3fa9c9; }
+  .legend-key .prasa{ color:#ff8a5c; }
+
+  .gana-table-wrap{
+    margin-top:14px;
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid #2c3d63;
+  }
+  .gana-grid{
+    display:grid;
+    grid-template-columns:repeat(10, 1fr);
+    font-family:var(--font-telugu);
+  }
+  .gana-grid .gh{
+    background:#2b5f7a;
+    color:#fff;
+    font-weight:700;
+    text-align:center;
+    padding:10px 2px;
+    font-size:18px;
+    border-right:1px solid rgba(255,255,255,.15);
+  }
+  .gana-grid .gu{
+    background:#c9d3de;
+    color:#16223c;
+    font-weight:700;
+    text-align:center;
+    padding:8px 2px;
+    font-size:15px;
+    border-right:1px solid rgba(0,0,0,.08);
+  }
+  .gana-span-row{
+    display:grid;
+    grid-template-columns:repeat(10, 1fr);
+  }
+  .gana-span-row.odd{ background:#233553; }
+  .gana-span-row.even{ background:#1a2740; }
+  .gana-span-row .glabel{
+    grid-column: var(--start) / span 3;
+    text-align:center;
+    padding:8px 4px 10px;
+    font-size:14px;
+    color:#dfe6f2;
+    border-bottom:2px solid var(--gold);
+    margin:0 6px;
+  }
+
+  /* ---------- HOME GRID ---------- */
+  .home-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-top:34px;
+  }
+  .sec-card{
+    background:linear-gradient(160deg, var(--cream), var(--cream-edge));
+    border:1.4px solid var(--ink);
+    border-radius:16px;
+    padding:22px 20px;
+    cursor:pointer;
+    transition:transform .15s ease;
+    text-align:left;
+  }
+  .sec-card:hover{ transform:translateY(-3px); }
+  .sec-card .num{
+    font-family:'Poppins',sans-serif;
+    font-size:13px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#a98a3e;
+    margin-bottom:6px;
+  }
+  .sec-card h2{
+    font-family:var(--font-telugu);
+    font-size:25px;
+    font-weight:700;
+    color:var(--ink);
+    margin:0 0 8px;
+  }
+  .sec-card p{
+    font-family:var(--font-telugu);
+    font-size:15px;
+    color:#5c4a30;
+    margin:0 0 12px;
+    line-height:1.5;
+  }
+  .sec-card .count{
+    display:inline-block;
+    background:var(--ink);
+    color:var(--cream);
+    font-size:13px;
+    font-family:'Poppins',sans-serif;
+    padding:4px 12px;
+    border-radius:20px;
+  }
+  .sec-card .progress-hint{
+    float:right;
+    font-size:13px;
+    color:var(--green);
+    font-family:'Poppins',sans-serif;
+    font-weight:500;
+  }
+
+  /* ---------- DECK VIEW ---------- */
+  #deck-view{ display:none; }
+  .back-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:6px;
+  }
+  .back-btn{
+    background:none;
+    border:none;
+    color:var(--gold);
+    font-family:'Poppins',sans-serif;
+    font-size:16px;
+    font-weight:500;
+    cursor:pointer;
+    padding:8px 0;
+  }
+  .back-btn:hover{ color:var(--gold-light); }
+  .deck-title{
+    text-align:center;
+    font-family:var(--font-display);
+    font-size:32px;
+    color:var(--cream);
+    margin:8px 0 4px;
+  }
+  .deck-sub{
+    text-align:center;
+    font-family:var(--font-telugu);
+    font-size:16px;
+    color:#c3cce3;
+    margin:0 0 18px;
+  }
+  .section-switch{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+    margin:12px 0 14px;
+  }
+  .switch-btn{
+    border:1px solid #2c3d63;
+    background:#0f1830;
+    color:#9aa7c4;
+    font-family:var(--font-telugu);
+    font-size:14px;
+    font-weight:600;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .switch-btn:hover{ border-color:var(--gold); color:var(--gold); }
+  .switch-btn.current{
+    background:var(--gold);
+    color:var(--ink-dark);
+    border-color:var(--gold);
+    cursor:default;
+  }
+
+  .controls{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    align-items:center;
+    margin:18px 0 6px;
+  }
+  .toggle{
+    display:flex;
+    background:#0f1830;
+    border-radius:30px;
+    padding:4px;
+    border:1px solid #2c3d63;
+  }
+  .toggle button{
+    border:none;
+    background:transparent;
+    color:#9aa7c4;
+    font-family:var(--font-telugu);
+    font-size:16px;
+    font-weight:600;
+    padding:10px 20px;
+    border-radius:26px;
+    cursor:pointer;
+    transition:all .2s ease;
+  }
+  .toggle button.active{
+    background:var(--gold);
+    color:var(--ink-dark);
+  }
+  .iconbtn{
+    border:1px solid #2c3d63;
+    background:#0f1830;
+    color:#c3cce3;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    font-size:20px;
+    transition:all .15s ease;
+  }
+  .iconbtn:hover{border-color:var(--gold); color:var(--gold);}
+
+  .progress-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:20px 0 8px;
+    font-family:var(--font-telugu);
+    color:#c3cce3;
+    font-size:16px;
+  }
+  .progress-track{
+    flex:1;
+    height:6px;
+    background:#0f1830;
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .progress-fill{
+    height:100%;
+    background:linear-gradient(90deg, var(--gold), var(--gold-light));
+    width:0%;
+    transition:width .3s ease;
+  }
+
+  .stage{
+    perspective:1600px;
+    margin:26px 0;
+  }
+  .plaka{
+    position:relative;
+    width:100%;
+    height:420px;
+    cursor:pointer;
+    transform-style:preserve-3d;
+    transition:transform .55s cubic-bezier(.4,.2,.2,1);
+  }
+  .plaka.flipped{ transform:rotateY(180deg); }
+  .face{
+    position:absolute;
+    inset:0;
+    backface-visibility:hidden;
+    border-radius:16px;
+    border:1.4px solid var(--ink);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px 28px;
+    background:linear-gradient(160deg, var(--cream), var(--cream-edge));
+    overflow-y:auto;
+  }
+  .face.back{
+    transform:rotateY(180deg);
+    background:var(--paper);
+  }
+  .face .kicker{
+    position:absolute;
+    top:16px;
+    left:20px;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:#a98a3e;
+    font-family:'Poppins',sans-serif;
+  }
+  .face .hint{
+    position:absolute;
+    bottom:14px;
+    right:18px;
+    font-size:13px;
+    color:#b7a06a;
+    font-family:'Poppins',sans-serif;
+  }
+  .face .name{
+    font-family:var(--font-telugu);
+    font-weight:700;
+    font-size:30px;
+    color:var(--ink);
+    line-height:1.4;
+  }
+  .face .def{
+    font-family:var(--font-telugu);
+    font-size:18px;
+    color:#3a2a1e;
+    line-height:1.6;
+    max-width:520px;
+    text-align:left;
+  }
+  .face .def .simple{
+    display:block;
+    margin-top:10px;
+    font-size:15px;
+    color:#6b5230;
+    font-style:italic;
+  }
+  .face .def .sutra-box{
+    display:block;
+    margin-top:12px;
+    padding:10px 12px;
+    background:#efe1c2;
+    border-left:3px solid var(--gold);
+    border-radius:6px;
+    font-size:15px;
+    color:var(--ink-dark);
+  }
+  .face .def .lakshana-box{
+    display:block;
+    margin-top:12px;
+    padding:10px 12px;
+    background:#efe1c2;
+    border-left:3px solid var(--ink);
+    border-radius:6px;
+    font-size:15px;
+    color:var(--ink-dark);
+    line-height:1.7;
+  }
+  .face .exlist{
+    list-style:none;
+    padding:0;
+    margin:0;
+    text-align:left;
+    max-width:480px;
+  }
+  .face .exlist li{
+    font-family:var(--font-telugu);
+    font-size:17px;
+    color:#3a2a1e;
+    margin-bottom:10px;
+    padding-left:20px;
+    position:relative;
+    line-height:1.6;
+  }
+  .face .exlist li::before{
+    content:"❖";
+    position:absolute;
+    left:0;
+    top:2px;
+    color:var(--gold);
+    font-size:13px;
+  }
+  .face .verse{
+    font-family:var(--font-telugu);
+    font-size:17px;
+    color:#3a2a1e;
+    line-height:1.9;
+    text-align:left;
+    max-width:480px;
+  }
+  .face .verse .src{
+    display:block;
+    margin-top:8px;
+    font-size:13px;
+    color:#8b7355;
+    font-style:italic;
+  }
+  .face .verse .note{
+    display:block;
+    margin-top:8px;
+    font-size:13px;
+    color:#8b7355;
+  }
+
+  .navrow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    margin-top:24px;
+  }
+  .navbtn{
+    border:1px solid #2c3d63;
+    background:#0f1830;
+    color:var(--cream);
+    padding:14px 26px;
+    border-radius:30px;
+    font-family:'Poppins',sans-serif;
+    font-weight:500;
+    font-size:17px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .navbtn:hover{border-color:var(--gold); color:var(--gold);}
+  .navbtn:disabled{opacity:.35; cursor:default;}
+  .navbtn.primary{
+    background:var(--gold);
+    color:var(--ink-dark);
+    border-color:var(--gold);
+  }
+  .navbtn.primary:hover{background:var(--gold-light); color:var(--ink-dark);}
+
+  .rating-row{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:18px;
+  }
+  .rate{
+    border:1px solid #2c3d63;
+    background:#0f1830;
+    padding:12px 22px;
+    border-radius:30px;
+    font-family:var(--font-telugu);
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    color:#c3cce3;
+  }
+  .rate.know:hover{ border-color:var(--green); color:#7ed6a0;}
+  .rate.review:hover{ border-color:var(--red); color:#f0a89f;}
+
+  .stats{
+    display:flex;
+    justify-content:center;
+    gap:26px;
+    margin-top:26px;
+    font-family:'Poppins',sans-serif;
+  }
+  .stat{ text-align:center; }
+  .stat .num{ font-size:27px; font-weight:600; color:var(--cream); }
+  .stat.know .num{ color:#7ed6a0; }
+  .stat.review .num{ color:#f0a89f; }
+  .stat .lbl{ font-size:13px; color:#8b97b5; text-transform:uppercase; letter-spacing:.08em; margin-top:2px;}
+
+  footer{
+    text-align:center;
+    color:#6c7a9c;
+    font-size:14px;
+    margin-top:36px;
+    font-family:var(--font-telugu);
+  }
+
+  @media (min-width:561px) and (max-width:1024px){
+    .wrap{ padding:40px 32px 70px; }
+    .plaka{ height:400px; }
+    .navbtn, .rate, .iconbtn{ font-size:17px; }
+  }
+
+  @media (max-width:560px){
+    .home-grid{ grid-template-columns:1fr; }
+    header h1{font-size:30px;}
+    .plaka{height:460px;}
+    .face .name{font-size:24px;}
+  }
+
+  /* ---------- TUTORIAL OVERLAY ---------- */
+  #tutorial-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(10,15,28,.82);
+    z-index:100;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+  }
+  #tutorial-overlay.open{ display:flex; }
+  #tutorial-card{
+    background:linear-gradient(160deg, var(--cream), var(--cream-edge));
+    border:1.4px solid var(--ink);
+    border-radius:18px;
+    max-width:500px;
+    width:100%;
+    padding:30px 28px 22px;
+  }
+  .tut-dots{
+    display:flex;
+    justify-content:center;
+    gap:7px;
+    margin-bottom:18px;
+  }
+  .tut-dots span{
+    width:7px; height:7px;
+    border-radius:50%;
+    background:var(--cream-edge);
+    border:1px solid var(--ink);
+    opacity:.5;
+  }
+  .tut-dots span.active{ background:var(--gold); opacity:1; border-color:var(--gold); }
+  #tut-body .tut-eyebrow{
+    font-family:'Poppins',sans-serif;
+    font-size:13px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:#a98a3e;
+    margin-bottom:8px;
+    text-align:center;
+  }
+  #tut-body h3{
+    font-family:var(--font-display);
+    font-size:26px;
+    color:var(--ink);
+    margin:0 0 12px;
+    text-align:center;
+  }
+  #tut-body p, #tut-body li{
+    font-family:var(--font-telugu);
+    font-size:17px;
+    color:#3a2a1e;
+    line-height:1.65;
+    text-align:center;
+  }
+  #tut-body ul{ list-style:none; padding:0; margin:0; text-align:left; max-width:400px; margin:0 auto; }
+  #tut-body li{ text-align:left; margin-bottom:10px; padding-left:22px; position:relative; }
+  #tut-body li::before{
+    content:"❖";
+    position:absolute; left:0; top:2px;
+    color:var(--gold); font-size:11px;
+  }
+  #tut-body .tut-kbd{
+    display:inline-block;
+    background:var(--ink);
+    color:var(--cream);
+    font-family:'Poppins',sans-serif;
+    font-size:13px;
+    padding:2px 8px;
+    border-radius:5px;
+    margin:0 2px;
+  }
+  .tut-nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:20px;
+  }
+  .tut-nav-right{ display:flex; gap:10px; }
+  .tut-skip{
+    background:none;
+    border:none;
+    color:#a98a3e;
+    font-family:var(--font-telugu);
+    font-size:15px;
+    cursor:pointer;
+    text-decoration:underline;
+  }
+  #tutorial-card .navbtn{
+    border:1px solid var(--ink);
+    background:transparent;
+    color:var(--ink);
+  }
+  #tutorial-card .navbtn.primary{
+    background:var(--ink);
+    color:var(--cream);
+    border-color:var(--ink);
+  }
+</style>
+</head>
+<body>
+
+<div id="tutorial-overlay">
+  <div id="tutorial-card">
+    <div class="tut-dots" id="tut-dots"></div>
+    <div id="tut-body"></div>
+    <div class="tut-nav">
+      <button class="tut-skip" id="tut-skip">దాటవేయండి</button>
+      <div class="tut-nav-right">
+        <button class="navbtn" id="tut-back">&larr; వెనుక</button>
+        <button class="navbtn primary" id="tut-next">తర్వాత &rarr;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">తెలుగు వ్యాకరణం &middot; పారస్పరిక సాధనం</div>
+    <h1 id="page-title">విద్యార్థి వ్యాకరణ అభ్యాసోపకరణము</h1>
+    <p id="page-sub">విభాగం ఎంచుకోండి &middot; పలకపై నొక్కి తిప్పండి &middot; నేర్చుకోండి</p>
+  </header>
+
+  <p class="font-note">ఈ పుట <b>Sree Krushnadevaraya</b> &amp; <b>Mallanna</b> ఖతులను వాడేలా రూపొందించబడింది — మీ పరికరంలో ఇవి లేకపోతే ప్రామాణిక ఖతికి మారుతుంది. <a href="https://freetelugufonts.com/" target="_blank" rel="noopener">ఇన్‌స్టాల్ చేసుకోండి &#8599;</a></p>
+
+  <button class="iconbtn" id="help-btn" title="సూచనలు" style="position:fixed; top:20px; right:20px; z-index:50;">?</button>
+
+  <!-- ============ HOME VIEW ============ -->
+  <div id="home-view">
+    <div class="home-grid" id="home-grid"></div>
+  </div>
+
+  <!-- ============ DECK VIEW ============ -->
+  <div id="deck-view">
+    <div class="back-row">
+      <button class="back-btn" id="back-btn">&larr; విభాగాలకు వెళ్ళండి</button>
+      <span></span>
+    </div>
+    <div class="deck-title" id="deck-title"></div>
+    <div class="section-switch" id="section-switch"></div>
+    <div class="deck-sub">పలకపై నొక్కండి / spacebar &rarr; తిప్పండి &nbsp;·&nbsp; &larr; &rarr; మీటలతో navigate</div>
+
+    <div id="gana-legend">
+      <div class="legend-row"><b>U</b> = గురువు &nbsp;&nbsp; <b>I</b> = లఘువు</div>
+      <div class="legend-row"><b>ఇంద్ర గణాలు:</b> నల (IIII), నగ (IIIU), సల (IIUI), భ (UII), ర (UIU), త (UUI)</div>
+      <div class="legend-row"><b>సూర్య గణాలు:</b> UI (గలం), III</div>
+      <div class="legend-key"><span class="yati">■ యతి స్థానం</span> &nbsp;&nbsp; <span class="prasa">■ ప్రాస స్థానం</span></div>
+      <div class="gana-table-wrap">
+        <div class="gana-grid">
+          <div class="gh">య</div><div class="gh">మా</div><div class="gh">తా</div><div class="gh">రా</div><div class="gh">జ</div><div class="gh">భా</div><div class="gh">న</div><div class="gh">స</div><div class="gh">ల</div><div class="gh">గం</div>
+        </div>
+        <div class="gana-grid">
+          <div class="gu">I</div><div class="gu">U</div><div class="gu">U</div><div class="gu">U</div><div class="gu">I</div><div class="gu">U</div><div class="gu">I</div><div class="gu">I</div><div class="gu">I</div><div class="gu">U</div>
+        </div>
+        <div class="gana-span-row odd"><div class="glabel" style="--start:1">య (IUU)</div></div>
+        <div class="gana-span-row even"><div class="glabel" style="--start:2">మా (UUU)</div></div>
+        <div class="gana-span-row odd"><div class="glabel" style="--start:3">తా (UUI)</div></div>
+        <div class="gana-span-row even"><div class="glabel" style="--start:4">రా (UIU)</div></div>
+        <div class="gana-span-row odd"><div class="glabel" style="--start:5">జ (IUI)</div></div>
+        <div class="gana-span-row even"><div class="glabel" style="--start:6">భా (UII)</div></div>
+        <div class="gana-span-row odd"><div class="glabel" style="--start:7">న (III)</div></div>
+        <div class="gana-span-row even"><div class="glabel" style="--start:8">స (IIU)</div></div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="toggle">
+        <button id="btn-t1" class="active"></button>
+        <button id="btn-t2"></button>
+      </div>
+      <button class="iconbtn" id="shuffle-btn" title="Shuffle">&#128256;</button>
+      <button class="iconbtn" id="restart-btn" title="Restart">&#8635;</button>
+    </div>
+
+    <div class="progress-row">
+      <span id="progress-label">1 / 1</span>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+
+    <div class="stage">
+      <div class="plaka" id="plaka">
+        <div class="face front">
+          <span class="kicker">పేరు</span>
+          <div class="name" id="name-text"></div>
+          <span class="hint">నొక్కి తిప్పండి</span>
+        </div>
+        <div class="face back">
+          <span class="kicker" id="kicker-back"></span>
+          <div id="back-content"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navrow">
+      <button class="navbtn" id="prev-btn">&larr; వెనుక</button>
+      <button class="navbtn primary" id="flip-btn">పలక తిప్పండి</button>
+      <button class="navbtn" id="next-btn">తర్వాత &rarr;</button>
+    </div>
+
+    <div class="rating-row">
+      <button class="rate know" id="know-btn">✓ తెలుసు</button>
+      <button class="rate review" id="review-btn">↻ మళ్ళీ చూడాలి</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat know"><div class="num" id="know-count">0</div><div class="lbl">తెలుసు</div></div>
+      <div class="stat review"><div class="num" id="review-count">0</div><div class="lbl">మళ్ళీ చూడాలి</div></div>
+      <div class="stat"><div class="num" id="seen-count">0</div><div class="lbl">చూసినవి</div></div>
+    </div>
+  </div>
+
+  <footer id="page-footer">4 విభాగాలు &middot; 60 పలకలు &middot; తెలుగు వ్యాకరణం</footer>
+</div>
+
+<script>
+const SIMPLE = {
+  vishesh_p: "సులభంగా: విశేషణం = గుణం చెప్పే పదం (నల్లని, పెద్ద); విశేష్యం = వస్తువు పేరు చెప్పే పదం (కలువ, ఇల్లు).",
+  tatpurusha: "సులభంగా: తత్పురుషం అంటే రెండు పదాల మధ్య విభక్తి ప్రత్యయాన్ని (ని, తో, కి వంటివి) తగ్గించి కలపడం.",
+  avyayam: "సులభంగా: అవ్యయం అంటే రూపం ఎప్పుడూ మారని పదం (ఉదా: మరియు, యథా, అయితే).",
+  anyapadartha: "సులభంగా: సమాసంలోని పదాలకు కాక, వేరే మూడో వ్యక్తి/వస్తువుకు ఆ పేరు వర్తిస్తుంది.",
+  druta: "సులభంగా: ద్రుత ప్రకృతికం అంటే 'ను / ఎను' వంటి ద్రుతంతో అంతమయ్యే పదం."
+};
+
+const sections = {
+  sandhulu: {
+    title: "సంధులు",
+    blurb: "తెలుగు సంధులు (12) + సంస్కృత సంధులు (7)",
+    t1: "సూత్రం", t2: "ఉదాహరణలు",
+    items: [
+      { name:"ఉత్వ (ఉకార) సంధి", info:"ఉత్తునకు అచ్చు పరమైనప్పుడు సంధి నిత్యంగా వస్తుంది (హ్రస్వ ఉకారానికి మాత్రమే వర్తిస్తుంది).",
+        ex:["రాముడు+అతడు = రాముడతడు","గోపురము+అట = గోపురమట","వాడు+ఇతడు = వాడితడు"] },
+      { name:"అత్వ (అకార) సంధి", info:"అత్తునకు సంధి బహుళంగా వస్తుంది — నిత్యం, నిషేధం, వైకల్పికం, అన్యవిధం అనే నాలుగు రూపాలుంటాయి.",
+        ex:["రామ+అయ్య = రామయ్య (నిత్యం)","మేన+అల్లుడు = మేనల్లుడు (వైకల్పికం)","దూత+ఇతడు = దూతయితడు (సంధి లేదు)"] },
+      { name:"ఇత్వ (ఇకార) సంధి", info:"ఇత్తునకు సంధి వైకల్పికంగా వస్తుంది — జరగవచ్చు, జరగకపోవచ్చు.",
+        ex:["ఏమి+అంటివి = ఏమంటివి","ఏమి+అనిరి = ఏమనిరి"] },
+      { name:"నుగాగమ సంధి", info:"ఉదంతమైన తద్ధర్మార్థ విశేషణాలకు అచ్చు పరమైనప్పుడు 'న్' ఆగమంగా వస్తుంది.",
+        ex:["చేయు+అతడు = చేయునతడు","వచ్చు+అప్పుడు = వచ్చునప్పుడు"] },
+      { name:"యడాగమ సంధి", info:"సంధి లేని చోట, స్వరానికి పరమైన స్వరానికి ముందు 'య్' ఆగమంగా వస్తుంది.",
+        ex:["మీ+ఇల్లు = మీయిల్లు","వెల+ఆలు = వెలయాలు","మా+అమ్మ = మాయమ్మ"] },
+      { name:"ఆమ్రేడిత సంధి", info:"అచ్చుకు ఆమ్రేడితం (అదే పదం రెండోసారి) పరమైనప్పుడు సంధి తరచుగా వస్తుంది.",
+        ex:["అక్కడ+అక్కడ = అక్కడక్కడ"] },
+      { name:"టుగాగమ సంధి", info:"కర్మధారయంలో ఉత్తునకు అచ్చు పరమైనప్పుడు 'ట్' ఆగమంగా వస్తుంది.",
+        ex:["చిగురు+ఆకు = చిగురుటాకు","పండు+ఆకు = పండుటాకు","నిగ్గు+అద్దము = నిగ్గుటద్దము"] },
+      { name:"గసడదవాదేశ సంధి", info:"ద్వంద్వ సమాసంలో క,చ,ట,త,ప లకు క్రమంగా గ,స,డ,ద,వ లు ఆదేశంగా వస్తాయి.",
+        ex:["వాడు+కొట్టె = వాడుగొట్టె","తల్లి+తండ్రులు = తల్లిదండ్రులు"] },
+      { name:"సరళాదేశ సంధి", info:"ద్రుత ప్రకృతికం మీది పరుషాలకు (క,చ,ట,త,ప) సరళాలు (గ,జ,డ,ద,బ) ఆదేశంగా వస్తాయి.<span class='simple'>సులభంగా: ద్రుత ప్రకృతికం అంటే 'ను / ఎను' వంటి ద్రుతంతో అంతమయ్యే పదం.</span>",
+        ex:["పూచెను+కలువలు = పూచెనుగలువలు","పూచెన్+కలువలు = పూచెన్గలువలు"] },
+      { name:"పుంప్వాదేశ సంధి", info:"కర్మధారయంలో మువర్ణకానికి (ము) 'పుం-పు' ఆదేశంగా వస్తుంది.",
+        ex:["సరసము+మాట = సరసపుమాట","ముత్యము+చిప్ప = ముత్యపుచిప్ప"] },
+      { name:"ప్రాతాది సంధి", info:"ప్రాత, క్రొత్త, లేత, క్రిందు, మీద, పువ్వు, కెంపు వంటి కొన్ని ప్రత్యేక పదాల మొదటి అచ్చు తర్వాత గల వర్ణాలకు లోపం వస్తుంది.",
+        ex:["లేత+దూడ = లేదూడ","కెంపు+తమ్మి = కెందమ్మి"] },
+      { name:"త్రిక సంధి", info:"ఆ, ఈ, ఏ అనే వాటిని త్రికాలు అంటారు. వీటి తర్వాత అసంయుక్త హల్లు ఉంటే ఆ హల్లుకు ద్విత్వం వచ్చి, ముందున్న దీర్ఘం హ్రస్వంగా మారుతుంది.",
+        ex:["ఆ+కడ = అక్కడ","ఈ+కడ = ఇక్కడ","ఏ+కడ = ఎక్కడ"] },
+      { name:"సవర్ణదీర్ఘ సంధి", info:"అ,ఇ,ఉ,ఋ లకు అవే అచ్చులు పరమైతే వాటి దీర్ఘాలు ఏకాదేశంగా వస్తాయి. (సంస్కృత సంధి)<span class='sutra-box'>సంస్కృత సూత్రం: <b>अकः सवर्णे दीर्घः</b> (అకః సవర్ణే దీర్ఘః) — పాణిని 6.1.101</span>",
+        ex:["రామ+ఆజ్ఞ = రామాజ్ఞ","మహి+ఈశుడు = మహీశుడు","గురు+ఉపదేశం = గురూపదేశం"] },
+      { name:"గుణ సంధి", info:"అకారానికి ఇ,ఉ,ఋ లు పరమైతే క్రమంగా ఏ,ఓ,అర్ లు ఏకాదేశంగా వస్తాయి. (సంస్కృత సంధి)<span class='sutra-box'>సంస్కృత సూత్రం: <b>आद्गुणः</b> (ఆద్గుణః) — పాణిని 6.1.87</span>",
+        ex:["సూర్య+ఉదయం = సూర్యోదయం","మహా+ఈశ్వరుడు = మహేశ్వరుడు","రాజ+ఇంద్ర = రాజేంద్ర"] },
+      { name:"వృద్ధి సంధి", info:"అకారానికి ఏ,ఐ లు పరమైతే ఐకారం; ఓ,ఔ లు పరమైతే ఔకారం; ఋ,ౠ లు పరమైతే ఆర్ ఏకాదేశంగా వస్తాయి. (సంస్కృత సంధి)<span class='sutra-box'>సంస్కృత సూత్రం: <b>वृद्धिरेचि</b> (వృద్ధిరేచి) — పాణిని 6.1.88</span>",
+        ex:["లోక+ఏక = లోకైక","సకల+ఐశ్వర్య = సకలైశ్వర్య","భువన+ఏక = భువనైక"] },
+      { name:"యణాదేశ సంధి", info:"ఇ,ఉ,ఋ లకు అసవర్ణ అచ్చులు పరమైతే క్రమంగా య,వ,ర లు ఆదేశంగా వస్తాయి. (సంస్కృత సంధి)<span class='sutra-box'>సంస్కృత సూత్రం: <b>इको यणचि</b> (ఇకో యణచి) — పాణిని 6.1.77</span>",
+        ex:["అభి+ఉదయం = అభ్యుదయం","సు+ఆగతం = స్వాగతం"] },
+      { name:"విసర్గ సంధి", info:"విసర్గ (:) కు హ,య,వ,ర,ల లేదా వర్గ 3,4,5 అక్షరాలు పరమైతే ఓకారంగా లేదా రేఫగా మారుతుంది. (సంస్కృత సంధి)<span class='sutra-box'>సంస్కృత సూత్రం: <b>ससजुषो रुः</b> (ససజుషో రుః) — పాణిని 8.2.66</span>",
+        ex:["అయః+మయం = అయోమయం","ఇతః+అధికం = ఇతోధికం","చతుః+ఆత్మ = చతురాత్మ"] },
+      { name:"జశ్త్వ (జస్త్వ) సంధి", info:"క,చ,ట,త,ప లకు అచ్చులు గానీ, హ,య,వ,ర,ల గానీ, వర్గ 3,4,5 అక్షరాలు గానీ పరమైతే గ,జ,డ,ద,బ లు ఆదేశంగా వస్తాయి. (సంస్కృత సంధి)<span class='sutra-box'>సంస్కృత సూత్రం: <b>झलां जशोऽन्ते</b> (ఝలాం జశోఽన్తే) — పాణిని 8.2.39</span>",
+        ex:["వాక్+అధిపతి = వాగాధిపతి","తత్+విధము = తద్విధము","శరత్+రాత్రి = శరద్రాత్రి"] },
+      { name:"అనునాసిక సంధి", info:"వర్గ ప్రథమాక్షరాలకు (క,చ,ట,త,ప) న,మ అనునాసికాలు పరమైతే ఆయా వర్గ అనునాసికాలు వికల్పంగా వస్తాయి. (సంస్కృత సంధి)<span class='sutra-box'>సంస్కృత సూత్రం: <b>यरोऽनुनासिकेऽनुनासिको वा</b> (యరోఽనునాసికేఽనునాసికో వా) — పాణిని 8.4.45</span>",
+        ex:["వాక్+మయం = వాఙ్మయం","జగత్+నాథ = జగన్నాథ"] }
+    ]
+  },
+  samasalu: {
+    title: "సమాసములు",
+    blurb: "కర్మధారయ, తత్పురుష, ద్వంద్వ తదితర సమాస భేదాలు (19)",
+    t1: "నిర్వచనం", t2: "ఉదాహరణలు",
+    items: [
+      { name:"ద్వంద్వ సమాసము", info:"ఉభయపదార్థ ప్రధానమైనది. సమాసంలోని రెండు పదాల అర్థాలు రెండూ సమానంగా ప్రధానంగా ఉంటాయి.",
+        ex:["రామలక్ష్మణులు — రాముడును లక్ష్మణుడును","తల్లిదండ్రులు — తల్లియును తండ్రియును","కూరగాయలు — కూరయు కాయయు"] },
+      { name:"విశేషణ పూర్వపద కర్మధారయము", info:"పూర్వపదం విశేషణంగాను, ఉత్తరపదం విశేష్యంగాను ఉండే కర్మధారయ సమాసం.<span class='simple'>సులభంగా: విశేషణం = గుణం చెప్పే పదం (నల్లని, పెద్ద); విశేష్యం = వస్తువు పేరు చెప్పే పదం (కలువ, ఇల్లు).</span>",
+        ex:["నల్లకలువ — నల్లనైన కలువ","మధురవచనము — మధురమైన వచనము","చిరునవ్వు — చిన్నదైన నవ్వు"] },
+      { name:"విశేషణ ఉత్తరపద కర్మధారయము", info:"పూర్వపదం విశేష్యంగాను, ఉత్తరపదం విశేషణంగాను ఉండే కర్మధారయ సమాసం.<span class='simple'>సులభంగా: విశేషణం = గుణం చెప్పే పదం (నల్లని, పెద్ద); విశేష్యం = వస్తువు పేరు చెప్పే పదం (కలువ, ఇల్లు).</span>",
+        ex:["వృక్షరాజము — శ్రేష్ఠమైన వృక్షము","గిరిరాజము — శ్రేష్ఠమైన గిరి","నాగరాజు — శ్రేష్ఠమైన నాగు"] },
+      { name:"ఉపమాన పూర్వపద కర్మధారయము", info:"పూర్వపదం ఉపమానంగాను (దేనితో పోలుస్తామో ఆ పదం), ఉత్తరపదం ఉపమేయంగాను (దేన్ని వర్ణిస్తున్నామో ఆ పదం) ఉండే కర్మధారయ సమాసం.",
+        ex:["బింబోష్ఠము — బింబము వంటి ఓష్ఠము","కుందదంతము — కుందపువ్వు వంటి పలువరుస"] },
+      { name:"ఉపమాన ఉత్తరపద కర్మధారయము", info:"పూర్వపదం ఉపమేయంగాను, ఉత్తరపదం ఉపమానంగాను ఉండే కర్మధారయ సమాసం.",
+        ex:["హస్తపద్మము — పద్మము వంటి హస్తము","నరసింహుడు — సింహము వంటి నరుడు","కరకమలము — కమలము వంటి చేయి"] },
+      { name:"రూపక (అవధారణ పూర్వపద) కర్మధారయము", info:"ఉపమానం యొక్క ధర్మాన్ని ఉపమేయంపై ఆరోపించడం రూపకం.",
+        ex:["విద్యాధనము — విద్య అనెడి ధనము","సంసారసాగరము — సంసారము అనెడి సాగరము"] },
+      { name:"సంబోధనా (సంభావనా) పూర్వపద కర్మధారయము", info:"పూర్వపదం సంజ్ఞావాచకంగాను (ఒక ప్రత్యేక పేరు), ఉత్తరపదం జాతివాచకంగాను (సాధారణ వర్గం పేరు) ఉండే కర్మధారయ సమాసం.",
+        ex:["గంగానది — గంగ అనే పేరుగల నది","ద్వారకానగరము — ద్వారక అనే పేరుగల నగరము","తెలుగుభాష — తెలుగు అనే పేరుగల భాష"] },
+      { name:"ద్వితీయా తత్పురుషము (కర్మ)", info:"పూర్వపదం చివర నిన్, నున్, లన్, గూర్చి, గురించి అనే ద్వితీయా విభక్తి ప్రత్యయాలు లోపించి ఏర్పడేది.<span class='simple'>సులభంగా: తత్పురుషం అంటే రెండు పదాల మధ్య విభక్తి ప్రత్యయాన్ని (ని, తో, కి వంటివి) తగ్గించి కలపడం.</span>",
+        ex:["సేతుబంధనం — సేతువును నిర్మించడం","నెలతాల్పు — నెలను దాల్చినవాడు"] },
+      { name:"తృతీయా తత్పురుషము (కరణ)", info:"పూర్వపదం చివర చేతన్, చేన్, తోడన్, తోన్ అనే తృతీయా విభక్తి ప్రత్యయాలు లోపించి ఏర్పడేది.<span class='simple'>సులభంగా: తత్పురుషం అంటే రెండు పదాల మధ్య విభక్తి ప్రత్యయాన్ని (ని, తో, కి వంటివి) తగ్గించి కలపడం.</span>",
+        ex:["అద్దాలమేడ — అద్దాలతో మేడ","కనకాభిషేకము — కనకముతో అభిషేకము","ధనాఢ్యుడు — ధనము చేత ఆఢ్యుడు"] },
+      { name:"చతుర్థీ తత్పురుషము (సంప్రదాన)", info:"పూర్వపదం చివర కొఱకున్, కై అనే చతుర్థీ విభక్తి ప్రత్యయాలు లోపించి ఏర్పడేది.<span class='simple'>సులభంగా: తత్పురుషం అంటే రెండు పదాల మధ్య విభక్తి ప్రత్యయాన్ని (ని, తో, కి వంటివి) తగ్గించి కలపడం.</span>",
+        ex:["ఊతపదాలు — ఊతం కొరకు పదాలు","భూతబలి — భూతము కొరకు బలి"] },
+      { name:"పంచమీ తత్పురుషము (అపాదాన)", info:"పూర్వపదం చివర వలనన్, కంటెన్, పట్టి అనే పంచమీ విభక్తి ప్రత్యయాలు లోపించి ఏర్పడేది.<span class='simple'>సులభంగా: తత్పురుషం అంటే రెండు పదాల మధ్య విభక్తి ప్రత్యయాన్ని (ని, తో, కి వంటివి) తగ్గించి కలపడం.</span>",
+        ex:["చోరభయము — చోరుని వలన భయము","జన్మాంధుడు — జన్మము నుండి అంధుడు"] },
+      { name:"షష్ఠీ తత్పురుషము (సంబంధ)", info:"పూర్వపదం చివర కిన్, కున్, యొక్క, లో, లోపల అనే షష్ఠీ విభక్తి ప్రత్యయాలు లోపించి ఏర్పడేది.<span class='simple'>సులభంగా: తత్పురుషం అంటే రెండు పదాల మధ్య విభక్తి ప్రత్యయాన్ని (ని, తో, కి వంటివి) తగ్గించి కలపడం.</span>",
+        ex:["రాజభటుడు — రాజు యొక్క భటుడు","దేశద్రోహులు — దేశానికి ద్రోహులు","దీపావళి — దీపముల యొక్క ఆవళి"] },
+      { name:"సప్తమీ తత్పురుషము (అధికరణ)", info:"పూర్వపదం చివర అందున్, నన్ అనే సప్తమీ విభక్తి ప్రత్యయాలు లోపించి ఏర్పడేది.<span class='simple'>సులభంగా: తత్పురుషం అంటే రెండు పదాల మధ్య విభక్తి ప్రత్యయాన్ని (ని, తో, కి వంటివి) తగ్గించి కలపడం.</span>",
+        ex:["బావినీరు — బావి యందలి నీరు","కంటినీరు — కంటి యందలి నీరు","గృహప్రవేశము — గృహమునందు ప్రవేశము"] },
+      { name:"సంబోధనా ప్రథమా తత్పురుషము", info:"ఓ, ఓయి, ఓరి, ఓసి వంటి సంబోధనా ప్రథమా విభక్తి ప్రత్యయాలతో ఏర్పడేది.<span class='simple'>సులభంగా: తత్పురుషం అంటే రెండు పదాల మధ్య విభక్తి ప్రత్యయాన్ని (ని, తో, కి వంటివి) తగ్గించి కలపడం.</span>",
+        ex:["ఓ అమ్మాయి","ఓయి పుణ్యాత్ముడా","ఓరి పాపాత్ముడా"] },
+      { name:"ద్విగు సమాసము", info:"సంఖ్యావాచక విశేషణంతో విశేష్యం సమసిస్తే ఏర్పడేది. దీనిలో పూర్వపదార్థం ప్రధానం.",
+        ex:["త్రికరణాలు — మూడు కరణాలు","నవరత్నాలు — తొమ్మిది రత్నాలు","సప్తర్షులు — ఏడుగురు ఋషులు"] },
+      { name:"బహువ్రీహి సమాసము", info:"అన్యపదార్థ ప్రధానమైనది.<span class='simple'>సులభంగా: సమాసంలోని పదాలకు కాక, వేరే మూడో వ్యక్తి/వస్తువుకు ఆ పేరు వర్తిస్తుంది.</span>",
+        ex:["చంద్రుడు — చల్లని కిరణాలు కలవాడు","చతుర్ముఖుడు — నాలుగు ముఖాలు కలవాడు (బ్రహ్మ)","పీతాంబరుడు — పచ్చని వస్త్రం కలవాడు (విష్ణువు)"] },
+      { name:"నఞ్ తత్పురుష సమాసము", info:"వ్యతిరేకార్థాన్నిచ్చే 'న' పూర్వపదంగా వచ్చే తత్పురుష సమాసం.<span class='simple'>సులభంగా: తత్పురుషం అంటే రెండు పదాల మధ్య విభక్తి ప్రత్యయాన్ని (ని, తో, కి వంటివి) తగ్గించి కలపడం.</span>",
+        ex:["అసత్యం — సత్యం కానిది","అధర్మం — ధర్మం కానిది","అనుచితం — ఉచితం కానిది"] },
+      { name:"అవ్యయీభావ సమాసము", info:"పూర్వపదార్థ ప్రధానమైనది. పూర్వపదం అవ్యయంగా, ఉత్తరపదం విశేష్యంగా ఉంటుంది.<span class='simple'>సులభంగా: అవ్యయం అంటే రూపం ఎప్పుడూ మారని పదం (ఉదా: మరియు, యథా, అయితే).</span>",
+        ex:["యథాశక్తి — శక్తికి తగినట్లు","యథాక్రమం — క్రమాన్ని అనుసరించి"] },
+      { name:"బహుద్వంద్వ (బహుపద ద్వంద్వ) సమాసము", info:"రెండు కంటే ఎక్కువ పదాలు సమాన ప్రాధాన్యతతో కలిసి ఏర్పడే ద్వంద్వ సమాసం.",
+        ex:["రామలక్ష్మణభరతశత్రుఘ్నులు","ధర్మార్థకామమోక్షాలు","దినవారపక్షమాసపత్రికలు"] }
+    ]
+  },
+  chandassu: {
+    title: "ఛందస్సు",
+    blurb: "దేశీ ఛందస్సులు (6) + సంస్కృత ఛందస్సులు (4)",
+    t1: "లక్షణాలు", t2: "ఉదాహరణ పద్యం",
+    hasLegend: true,
+    items: [
+      { name:"ఆటవెలది",
+        info:"ఉపజాతి పద్యం. నాలుగు పాదాలు. 1,3 పాదాల్లో 3 సూర్యగణాలు + 2 ఇంద్రగణాలు; 2,4 పాదాల్లో 5 సూర్యగణాలు. యతి: 4వ గణం మొదటి అక్షరం. ప్రాస నియమం లేదు (ప్రాసయతి చెల్లును).<span class='lakshana-box'><b>గణ విభజన</b><br>పాదము 1,3 — సూ సూ సూ ఇం ఇం<br>పాదము 2,4 — సూ సూ సూ సూ సూ<br><br><b>లక్షణ పద్యం</b><br>ఇనగణ త్రయంబు నింద్ర ద్వయంబును<br>హంస పంచకంబు ఆటవెలది.</span>",
+        ex:["ఉప్పుకప్పురంబు ఒక్కపోలికనుండు<br>చూడచూడ రుచుల జాడవేరు<br>పురుషులందు పుణ్యపురుషులు వేరయా<br>విశ్వదాభిరామ వినుర వేమ<span class='src'>— వేమన శతకం</span><span class='note'>ఈ ఛందస్సుకు ప్రాస నియమం లేనందున పంక్తుల్లో ప్రత్యేకంగా గుర్తించలేదు.</span>"] },
+      { name:"తేటగీతి",
+        info:"ఉపజాతి పద్యం. ప్రతి పాదంలో 1 సూర్యగణం + 2 ఇంద్రగణాలు + 2 సూర్యగణాలు (మొత్తం 5 గణాలు). యతి: 1వ గణం మొదటి అక్షరానికి 4వ గణం మొదటి అక్షరం. ప్రాస నియమం లేదు.<span class='lakshana-box'><b>గణ విభజన (ప్రతి పాదం)</b><br>సూ ఇం ఇం సూ సూ<br><br><b>లక్షణ పద్యం</b><br>సూర్యుడొక్కరుండు సురరాజులిద్దరు<br>దినకరద్వయంబు తేటగీతి.</span>",
+        ex:["విని దశగ్రీవు డంగజ వివశు డగుచు<br>నర్థి బంచిన బసిడిఱ్రి యై నటించు<br>నీచు మారీచు రాముడు నెఱి వధించె<br>నంతలో సీత గొనిపోయె నసురవిభుడు<span class='note'>ఈ ఛందస్సుకు ప్రాస నియమం లేనందున పంక్తుల్లో ప్రత్యేకంగా గుర్తించలేదు.</span>"] },
+      { name:"సీసము",
+        info:"జాతి పద్యం, అత్యంత ప్రాచీనమైనది. ప్రతి పాదానికి రెండు భాగాలు — మొదటి భాగంలో 4 ఇంద్రగణాలు, రెండో భాగంలో 2 ఇంద్రగణాలు + 2 సూర్యగణాలు (మొత్తం 6 ఇంద్ర + 2 సూర్య = 8 గణాలు). చివర ఆటవెలది లేదా తేటగీతి తప్పనిసరిగా తోడై వస్తుంది; అది లేకపోతే సీసం పూర్తి కాదు. ప్రాస నియమం లేదు, ప్రాసయతి కూడా చెల్లుతుంది.<span class='lakshana-box'><b>గణ విభజన</b> (బ్రాకెట్‌లో ఉన్నవి యతి స్థానాలు)<br><span class='yati'>(ఇం)</span> ఇం <span class='yati'>(ఇం)</span> ఇం &nbsp;—&nbsp; <span class='yati'>(ఇం)</span> ఇం <span class='yati'>(సూ)</span> సూ</span>",
+        ex:["<span class='yati'>మం</span>దార మకరంద మాధుర్యమునఁ దేలు<br>మధుపంబు వోవునే మదనములకు?<br><span class='yati'>నిర్మ</span>ల మందాకినీ వీచికలఁ దూఁగు<br>రాయంచ సనునె తరంగిణులకు?<br><span class='yati'>లలి</span>త రసాలపల్లవ ఖాదియై చొక్కు<br>కోయిల చేరునే కుటజములకుఁ?<br><span class='yati'>బూర్ణే</span>ందు చంద్రికా స్ఫురితచకోరక<br>మరుగునే సాంద్ర నీహారములకు?<span class='src'>— భాస్కర శతకం</span><span class='note'>రంగుతో గుర్తించినవి ఒక్కో అర్ధపాదం ఆరంభం (యతి స్థానం సూచనకు); ఖచ్చితమైన గణ విభజన సాధన కోసం ఉపాధ్యాయుడితో సరిచూసుకోండి.</span>"] },
+      { name:"కందము",
+        info:"జాతి పద్యం. నాలుగు పాదాలు; అన్ని గణాలు నాలుగు మాత్రల గణాలే (గగ, నల, భ, జ, స). 1,3 పాదాల్లో మూడు గణాలు; 2,4 పాదాల్లో అయిదున్నర గణాలు ఉంటాయి; బేసి గణాల స్థానంలో జగణం రాదు. ప్రాస నియమం ఉంటుంది.<span class='lakshana-box'><b>లక్షణ పద్యం</b> (కవిజనాశ్రయము)<br>కందము త్రిశర గణంబుల<br>నందము గా భ జ స నలము లటవడి మూటన్<br>బొందును నలజల నాఱిట<br>నొందుం దుద గురువు జగణ ముండదు బేసిన్</span>",
+        ex:["అ<span class='prasa'>ప్పి</span>చ్చువాడు వైద్యుడు<br>నె<span class='prasa'>ప్పు</span>డు నెడతెగక పాఱు నేఱును, ద్విజుడున్<br>చొ<span class='prasa'>ప్ప</span>డిన యూరనుండుము,<br>జొ<span class='prasa'>ప్ప</span>డకున్నట్టి యూరు సొరకుము సుమతీ!<span class='src'>— సుమతీ శతకం (బద్దెన)</span><span class='note'>రంగులో ఉన్న 'ప్ప' ప్రాస స్థానం.</span>"] },
+      { name:"ద్విపద",
+        info:"జాతి పద్యం. ప్రతి పాదంలో 3 ఇంద్రగణాలు + 1 సూర్యగణం (ఇం ఇం ఇం సూ). యతి: 3వ గణం మొదటి అక్షరం. ప్రాస నియమం ఉంటుంది.",
+        ex:["శ్రీ కా<span class='prasa'>మి</span>నీనాథు జిత దైత్యనాథు<br>లోక<span class='prasa'>ర</span>క్షణకృత్య లోకైక నిత్యు<br>నిత్యస<span class='prasa'>దా</span>నందు నిర్యాణకృత్యుఁ<br>గృత్యవి<span class='prasa'>దూ</span>రు నకృత్రిమాధారు<span class='src'>— రంగనాథ రామాయణం (గోన బుద్దారెడ్డి)</span><span class='note'>మీరు గుర్తించిన ప్రాస జతలు: కా-క (పంక్తులు 1,2), త్య-త్య (పంక్తులు 3,4).</span>"] },
+      { name:"మంజరీ ద్విపద",
+        info:"ద్విపద వలెనే గణ నిర్మాణం (3 ఇంద్రగణాలు + 1 సూర్యగణం) ఉంటుంది, కానీ ప్రాస నియమం ఉండదు.",
+        ex:["శ్రీకామినీవక్షు జితహిరణ్యాక్షు<br>భువనపాలనదక్షుఁ బుండరీకాక్షు<br>వివిధగీర్వాణాద్యు వేదాంతవేద్యుఁ<br>బరమతత్త్వాపాద్యు భవరోగవైద్యు<span class='src'>— శృంగార మంజరి (తాళ్ళపాక అన్నమాచార్యులు)</span><span class='note'>ప్రాస నియమం లేదు కాబట్టి ఇక్కడ గుర్తించలేదు.</span>"] },
+      { name:"ఉత్పలమాల",
+        info:"వృత్త పద్యం. నాలుగు పాదాలు; ప్రతి పాదంలో భ,ర,న,భ,భ,ర,వ గణాలు (20 అక్షరాలు). యతి: 10వ అక్షరం. ప్రాస నియమం ఉంటుంది (ప్రాస యతి చెల్లదు).<span class='lakshana-box'><b>గణ విభజన</b><br>UII UIU III UII UII UIU IU</span>",
+        ex:["సా<span class='prasa'>ర</span>పు ధర్మమున్ విమల సత్యముఁ బాపముచేత బొంకుచేఁ<br>పా<span class='prasa'>ర</span>ముఁ బొందలేక చెడఁ బాఱినదైన యవస్థ దక్షు లె<br>వ్వా<span class='prasa'>ర</span> లుపేక్ష సేసి రది వారల చేటగుఁగాని ధర్మని<br>స్తా<span class='prasa'>ర</span>క మయ్యు సత్యశుభ దాయక మయ్యును దైవ ముండెడున్<span class='src'>— ఆంధ్ర మహాభారతం, ఉద్యోగపర్వం (తిక్కన సోమయాజి)</span>"] },
+      { name:"చంపకమాల",
+        info:"వృత్త పద్యం. నాలుగు పాదాలు; ప్రతి పాదంలో న,జ,భ,జ,జ,జ,ర గణాలు (21 అక్షరాలు). యతి: 11వ అక్షరం. ప్రాస నియమం ఉంటుంది.<span class='lakshana-box'><b>లక్షణ పాదం</b><br>నజభజజ్జలరేఫలు పెనంగి దిశాయతి తోడ గూడినన్<br>త్రిజగదభిష్టుతా బుధనిధీ విను చంపకమాలయై చనున్</span>",
+        ex:["అ<span class='prasa'>ట</span>జని కాంచె భూమిసురు డంబర చుంబి శిరస్సరజ్ఝరీ<br>ప<span class='prasa'>ట</span>ల ముహుర్ముహుర్ లుఠ దభంగ తరంగ మృదంగ నిస్వన<br>స్ఫు<span class='prasa'>ట</span> నటనానుకూల పరిఫుల్ల కలాప కలాపి జాలమున్<br>గ<span class='prasa'>ట</span>క చరత్కరేణు కర కంపిత సాలము శీతశైలమున్<span class='src'>— మనుచరిత్ర (అల్లసాని పెద్దన)</span>"] },
+      { name:"మత్తేభ విక్రీడితము",
+        info:"వృత్త పద్యం. నాలుగు పాదాలు; ప్రతి పాదంలో స,భ,ర,న,మ,య,వ గణాలు (20 అక్షరాలు). యతి: 14వ అక్షరం. ప్రాస నియమం ఉంటుంది.<span class='lakshana-box'><b>లక్షణ పాదం</b><br>నలువొందన్ సభరల్ నమల్యవల తోనంగూడి మత్తేభ మిం<br>పలరారున్ బదునాలు గౌ విరతి చే నానందరంగా ధిపా</span>",
+        ex:["అ<span class='prasa'>ల</span> వైకుంఠపురంబులో నగరిలో నా మూల సౌధంబు దా<br>ప<span class='prasa'>ల</span> మందారవనాంతరామృత సరః ప్రాంతేందు కాంతోపలో<br>త్ప<span class='prasa'>ల</span> పర్యంక రమావినోది యగు నాపన్నప్రసన్నుండు వి<br>హ్వ<span class='prasa'>ల</span> నాగేంద్రము 'పాహిపాహి' యనఁ గుయ్యాలించి సంరంభియై<span class='src'>— శ్రీమదాంధ్ర భాగవతం, గజేంద్ర మోక్షం (పోతన)</span>"] },
+      { name:"శార్దూల విక్రీడితము",
+        info:"వృత్త పద్యం. నాలుగు పాదాలు; ప్రతి పాదంలో మ,స,జ,స,త,త,గ గణాలు (19 అక్షరాలు). యతి: 13వ అక్షరం. ప్రాస నియమం ఉంటుంది.<span class='lakshana-box'><b>లక్షణ పాదం</b><br>సారాచార విశారదాయి నయితిన్ శార్దూల విక్రీడితా<br>కారంబై మసజమ్ము లిమ్ముగ సతాగప్రాప్తమై చెల్వగున్</span>",
+        ex:["ర<span class='prasa'>క్షో</span>వీరుల నెల్లఁ ద్రుంచి రణసంరంభంబు చాలించి దృ<br>ష్టి<span class='prasa'>క్షే</span>పంబు భయంకరంబుగ సభాసింహాసనారూఢుఁడై<br>య<span class='prasa'>క్షీ</span>ణాగ్రహుఁడై నృసింహుఁడు కరాళాస్యంబుతో నొప్పెఁ దన్<br>వీ<span class='prasa'>క్షిం</span>పం బలికింప నోడి యితరుల్ విభ్రాంతులై డాఁగఁగన్<span class='src'>— శ్రీమదాంధ్ర భాగవతం, నృసింహావతారం (పోతన)</span>"] }
+    ]
+  },
+  alankaramulu: {
+    title: "అలంకారములు",
+    blurb: "శబ్దాలంకారములు (6) + అర్ధాలంకారములు (6)",
+    t1: "నిర్వచనం", t2: "ఉదాహరణలు",
+    items: [
+      { name:"వృత్త్యనుప్రాస", info:"ఒకే హల్లు అనేకసార్లు ఆవృతమవడం వల్ల కలిగే శబ్దాలంకారం.",
+        ex:["వెడవెడ నడకలు నడచుచు<br>నెడనెడ నడు గిడక నడరి యిల దిగఁబడగా<br>బుడిబుడి నొడువులు నొడువుచుఁ<br>జిడిముడి తడఁబడగ వడుగు చేరెన్ రాజున్<span class='note'>'డ' అనే హల్లు దాదాపు ప్రతి పాదంలో పలుమార్లు ఆవృతమవుతుంది.</span>"] },
+      { name:"ఛేకానుప్రాస", info:"అర్థభేదంతో రెండు హల్లుల జంట వెంటవెంటనే రావడం.",
+        ex:["'అనాథ నాథ నంద నందన నీకు వంద వందనములు' — 'న-థ' మరియు 'న-ద' హల్లు జంటలు వరుసగా ఆవృతమవుతాయి"] },
+      { name:"లాటానుప్రాస", info:"అర్థభేదం లేకుండా, తాత్పర్యభేదం మాత్రమే ఉండేలా ఒకే పదం వెంటవెంటనే రావడం.",
+        ex:["సీ. కమలాక్షు నర్చించు కరములు కరములు - శ్రీనాథు వర్ణించు జిహ్వ జిహ్వ;<br>సురరక్షకునిఁ జూచు చూడ్కులు చూడ్కులు - శేషశాయికి మ్రొక్కు శిరము శిరము;<br>విష్ణు నాకర్ణించు వీనులు వీనులు - మధువైరిఁ దవిలిన మనము మనము;<br>భగవంతు వలగొను పదములు పదములు - పురుషోత్తముని మీఁది బుద్ధి బుద్ధి;<br>తే. దేవదేవుని చింతించు దినము దినము;<br>చక్రహస్తునిఁ బ్రకటించు చదువు చదువు;<br>కుంభినీధవుఁ జెప్పెడి గురుఁడు గురుఁడు;<br>తండ్రి! హరిఁ జేరు మనియెడి తండ్రి తండ్రి.<span class='note'>ప్రతి జతలోనూ ఒకే పదం (కరములు కరములు వంటివి) వేర్వేరు తాత్పర్యంతో వస్తుంది.</span>"] },
+      { name:"అంత్యానుప్రాస", info:"ప్రతి పాదం చివర ఒకే అక్షరం లేదా పదం పునరావృతం కావడం.",
+        ex:["సీ. కమనీయ శుభగాత్రుఁ గంజాతదళనేత్రుఁ, బసితకళత్రుఁ బావనచరిత్రు<br>నత్యసంకల్పు నిశాచరోగ్ర వికల్పు, నతపన్నగాకల్పు నాగతల్పు<br>గౌస్తుభమణిభూషు గంభీరమృదుభాషు, శితజనపోషు నంచితవిశేషు<br>నీలనీరదకాయు నిర్దితదైతేయు, ధృతపీతకౌశేయు నతవిధేయు<span class='note'>ప్రతి అర్ధపాదం చివర 'త్రు', 'ల్పు', 'షు', 'యు' వంటి అక్షరాలు పునరావృతమవుతాయి.</span>"] },
+      { name:"ముక్తపదగ్రస్తము", info:"ఒక పాదం చివర వదిలిన పదాన్ని తర్వాతి పాదం మొదట్లో గ్రహించి ప్రయోగించడం.",
+        ex:["సుదతీ నూతన మదనా<br>మదనాగ తురంగ పూర్ణ మణిమయ సదనా<br>సదనామయ గజ రదనా<br>రదనాగేంద్ర నిభకీర్తి రసనరసింహా<span class='src' style='display:block;margin-top:6px;font-size:12px;color:#8b7355'>'మదనా' పంక్తి1 చివర, పంక్తి2 మొదట్లో; 'సదనా' పంక్తి2 చివర, పంక్తి3 మొదట్లో; 'రదనా' పంక్తి3 చివర, పంక్తి4 మొదట్లో వస్తుంది.</span>"] },
+      { name:"యమకము", info:"అర్థభేదంతో కూడిన అక్షర సమూహం మళ్లీ మళ్లీ రావడం.",
+        ex:["లేమా! దనుజుల గెలువఁగ<br>లేమా? నీ వేల కడఁగి లేచితి? విటు రా<br>లే మాను మాన వేనిన్<br>లే మా విల్లందికొనుము లీలం గేలన్.<span class='note'>'లేమా' అనే అక్షరసమూహం ప్రతిసారీ వేరే అర్థంతో వస్తుంది (స్త్రీ / లేమా=లేదా / లే+మా=లేవకు తల్లీ వంటి భేదాలు).</span>"] },
+      { name:"ఉపమాలంకారము", info:"ఉపమాన ఉపమేయాలకు గల పోలికను మనోహరంగా వర్ణించడం. ఉపమేయం, ఉపమానం, సమానధర్మం, ఉపమావాచకం అనే నాలుగు అంశాలుంటాయి.",
+        ex:["'పోరున ఒరిగెడి వీరుని వలె రవి జారె పశ్చిమాద్రి' — అస్తమించే సూర్యుడిని యుద్ధంలో ఒరిగిపోయే వీరునితో పోల్చడం"] },
+      { name:"ఉత్ప్రేక్షాలంకారము", info:"ఉపమానంలోని ధర్మాలు ఉపమేయంలో ఉన్నాయని ఊహించి చెప్పడం.",
+        ex:["'వీర యోధుల వేడి రక్తమటులెర్రవారె నింగి' — సాయంకాలపు ఎర్రని ఆకాశాన్ని యోధుల వేడి రక్తంగా ఊహించి చెప్పడం"] },
+      { name:"రూపకాలంకారము", info:"ఉపమేయ ఉపమానాలకు అభేదం (రెండూ ఒకటే) అని చెప్పడం.",
+        ex:["'నరసరాజు కీర్తి పాలసముద్రం' — కీర్తినే పాలసముద్రంగా చెప్పడం"] },
+      { name:"అతిశయోక్తి", info:"చెప్పవలసిన విషయాన్ని మించి, ఎక్కువ చేసి, గొప్పగా చెప్పడం.",
+        ex:["వీరుని బాణం మేఘాలను చీల్చిందని వర్ణించడం వంటివి అతిశయోక్తికి ఉదాహరణ"] },
+      { name:"అర్ధాంతరన్యాసము", info:"సామాన్యాన్ని విశేషంతో, లేదా విశేషాన్ని సామాన్యంతో సమర్థించి చెప్పడం.",
+        ex:["'శివాజీ కళ్యాణ దుర్గాన్ని జయించాడు, వీరులకు సాధ్యం కానిది లేదు కదా!' — విశేషాన్ని సామాన్య సూత్రంతో సమర్థించడం"] },
+      { name:"దృష్టాంతము", info:"రెండు వాక్యాల ధర్మాలను బింబ-ప్రతిబింబ భావంతో వర్ణించి చెప్పడం.",
+        ex:["'ఓ రాజా, నీవే కీర్తిమంతుడవు; చంద్రుడే కాంతిమంతుడు' — వాక్యాలు ఒకదానికొకటి ప్రతిబింబంగా ఉంటాయి"] }
+    ]
+  }
+};
+
+const sectionState = {};
+let currentKey = null;
+
+function initState(key){
+  const n = sections[key].items.length;
+  sectionState[key] = {
+    order: Array.from({length:n}, (_,i)=>i),
+    idx: 0,
+    mode: 't1',
+    ratings: {}
+  };
+}
+Object.keys(sections).forEach(initState);
+
+function renderHome(){
+  document.getElementById('home-view').style.display = 'block';
+  document.getElementById('deck-view').style.display = 'none';
+  const grid = document.getElementById('home-grid');
+  grid.innerHTML = '';
+  Object.keys(sections).forEach((key, i)=>{
+    const sec = sections[key];
+    const st = sectionState[key];
+    const seen = Object.keys(st.ratings).length;
+    const div = document.createElement('div');
+    div.className = 'sec-card';
+    div.innerHTML = `<div class="num">విభాగం ${String(i+1).padStart(2,'0')}</div>
+      <h2>${sec.title}</h2>
+      <p>${sec.blurb}</p>
+      <span class="count">${sec.items.length} పలకలు</span>
+      ${seen>0 ? `<span class="progress-hint">${seen}/${sec.items.length} చూశారు</span>` : ''}`;
+    div.addEventListener('click', ()=> openSection(key));
+    grid.appendChild(div);
+  });
+}
+
+function openSection(key){
+  currentKey = key;
+  document.getElementById('home-view').style.display = 'none';
+  document.getElementById('deck-view').style.display = 'block';
+  const sec = sections[key];
+  document.getElementById('deck-title').textContent = sec.title + ' పలకలు';
+  document.getElementById('btn-t1').textContent = 'వర్గం 1 · ' + sec.t1;
+  document.getElementById('btn-t2').textContent = 'వర్గం 2 · ' + sec.t2;
+  document.getElementById('gana-legend').style.display = sec.hasLegend ? 'block' : 'none';
+  renderSectionSwitch();
+  const st = sectionState[key];
+  setToggle(st.mode);
+  renderCard();
+}
+
+function renderSectionSwitch(){
+  const row = document.getElementById('section-switch');
+  row.innerHTML = '';
+  Object.keys(sections).forEach(key=>{
+    const btn = document.createElement('button');
+    btn.className = 'switch-btn' + (key===currentKey ? ' current' : '');
+    btn.textContent = sections[key].title;
+    if(key !== currentKey){
+      btn.addEventListener('click', ()=> openSection(key));
+    }
+    row.appendChild(btn);
+  });
+}
+
+function setToggle(mode){
+  const st = sectionState[currentKey];
+  st.mode = mode;
+  document.getElementById('btn-t1').classList.toggle('active', mode==='t1');
+  document.getElementById('btn-t2').classList.toggle('active', mode==='t2');
+}
+
+function currentItem(){
+  const st = sectionState[currentKey];
+  const sec = sections[currentKey];
+  return sec.items[st.order[st.idx]];
+}
+
+function renderCard(){
+  const st = sectionState[currentKey];
+  const sec = sections[currentKey];
+  const item = currentItem();
+  const plaka = document.getElementById('plaka');
+  plaka.classList.remove('flipped');
+  document.getElementById('name-text').textContent = item.name;
+  const kb = document.getElementById('kicker-back');
+  const bc = document.getElementById('back-content');
+  if(st.mode==='t1'){
+    kb.textContent = sec.t1;
+    bc.innerHTML = `<div class="def">${item.info}</div>`;
+  } else {
+    kb.textContent = sec.t2;
+    if(currentKey === 'chandassu'){
+      bc.innerHTML = `<div class="verse">${item.ex.join('')}</div>`;
+    } else {
+      bc.innerHTML = `<ul class="exlist">${item.ex.map(e=>`<li>${e}</li>`).join('')}</ul>`;
+    }
+  }
+  document.getElementById('progress-label').textContent = `${st.idx+1} / ${sec.items.length}`;
+  document.getElementById('progress-fill').style.width = ((st.idx+1)/sec.items.length*100)+'%';
+  document.getElementById('prev-btn').disabled = st.idx===0;
+  document.getElementById('next-btn').disabled = st.idx===sec.items.length-1;
+  updateStats();
+}
+
+function flipCard(){
+  document.getElementById('plaka').classList.toggle('flipped');
+}
+
+function go(delta){
+  const st = sectionState[currentKey];
+  const sec = sections[currentKey];
+  st.idx = Math.max(0, Math.min(sec.items.length-1, st.idx+delta));
+  renderCard();
+}
+
+function shuffleDeck(){
+  const st = sectionState[currentKey];
+  for(let i=st.order.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [st.order[i],st.order[j]]=[st.order[j],st.order[i]];
+  }
+  st.idx = 0;
+  renderCard();
+}
+
+function restartDeck(){
+  initState(currentKey);
+  renderCard();
+}
+
+function rate(kind){
+  const st = sectionState[currentKey];
+  const sec = sections[currentKey];
+  st.ratings[st.order[st.idx]] = kind;
+  updateStats();
+  if(st.idx < sec.items.length-1){ go(1); }
+}
+
+function updateStats(){
+  const st = sectionState[currentKey];
+  let know=0, review=0;
+  Object.values(st.ratings).forEach(v=>{ if(v==='know') know++; else if(v==='review') review++; });
+  document.getElementById('know-count').textContent = know;
+  document.getElementById('review-count').textContent = review;
+  document.getElementById('seen-count').textContent = Object.keys(st.ratings).length;
+}
+
+document.getElementById('plaka').addEventListener('click', flipCard);
+document.getElementById('flip-btn').addEventListener('click', flipCard);
+document.getElementById('prev-btn').addEventListener('click', ()=>go(-1));
+document.getElementById('next-btn').addEventListener('click', ()=>go(1));
+document.getElementById('shuffle-btn').addEventListener('click', shuffleDeck);
+document.getElementById('restart-btn').addEventListener('click', restartDeck);
+document.getElementById('know-btn').addEventListener('click', ()=>rate('know'));
+document.getElementById('review-btn').addEventListener('click', ()=>rate('review'));
+document.getElementById('btn-t1').addEventListener('click', ()=>{ setToggle('t1'); renderCard(); });
+document.getElementById('btn-t2').addEventListener('click', ()=>{ setToggle('t2'); renderCard(); });
+document.getElementById('back-btn').addEventListener('click', renderHome);
+
+document.addEventListener('keydown', (e)=>{
+  if(document.getElementById('deck-view').style.display !== 'block') return;
+  if(e.code==='Space'){ e.preventDefault(); flipCard(); }
+  else if(e.code==='ArrowRight'){ go(1); }
+  else if(e.code==='ArrowLeft'){ go(-1); }
+});
+
+const tutSteps = [
+  {
+    eyebrow:"1 / 5 &middot; స్వాగతం",
+    title:"విద్యార్థి వ్యాకరణ అభ్యాసోపకరణానికి స్వాగతం!",
+    body:`<p>ఇది తెలుగు వ్యాకరణం నేర్చుకోవడానికి ఒక పారస్పరిక సాధనం. సంధులు, సమాసములు, ఛందస్సు, అలంకారములు — ఈ నాలుగు విభాగాల్లో మొత్తం 60 పలకలు మీ కోసం సిద్ధంగా ఉన్నాయి.</p>`
+  },
+  {
+    eyebrow:"2 / 5 &middot; విభాగం ఎంచుకోండి",
+    title:"మొదట ఒక విభాగం ఎంచుకోండి",
+    body:`<p>మొదటి పుటలో 4 విభాగాల పెట్టెలు కనిపిస్తాయి. ఒకదానిపై నొక్కితే ఆ విభాగంలోని పలకలు తెరుచుకుంటాయి. ఎప్పుడైనా "&larr; విభాగాలకు వెళ్ళండి" నొక్కి వెనక్కి రావచ్చు.</p>`
+  },
+  {
+    eyebrow:"3 / 5 &middot; పలక తిప్పండి",
+    title:"పలకపై నొక్కి తిప్పండి",
+    body:`<ul>
+      <li>పలకపై నొక్కితే (లేదా <span class="tut-kbd">Space</span>) అది తిరిగి వెనుక వైపు వివరాలు చూపిస్తుంది.</li>
+      <li><b>వర్గం 1 / వర్గం 2</b> వైకల్పికముతో వెనుక వైపు ఏమి చూపించాలో (నిర్వచనం/సూత్రం లేదా ఉదాహరణలు) మార్చుకోవచ్చు.</li>
+      <li><span class="tut-kbd">&larr;</span> <span class="tut-kbd">&rarr;</span> బాణం మీటలతో పలకల మధ్య తిరగవచ్చు.</li>
+    </ul>`
+  },
+  {
+    eyebrow:"4 / 5 &middot; సాధన & అనుసరణ",
+    title:"మీ పురోగతిని గమనించండి",
+    body:`<ul>
+      <li><b>✓ తెలుసు</b> / <b>↻ మళ్ళీ చూడాలి</b> మీటలతో ప్రతి పలకను మూల్యనిర్ధారణ చేయండి, దిగువన లెక్క కనిపిస్తుంది.</li>
+      <li>&#128256; మీటతో పలకల క్రమాన్ని తారుమారు చేయవచ్చు; &#8635; మీటతో ఆ విభాగాన్ని మళ్లీ మొదటికి తీసుకెళ్లవచ్చు.</li>
+      <li>ప్రతి విభాగం పురోగతి విడిగా నిక్షిప్తమవుతుంది.</li>
+    </ul>`
+  },
+  {
+    eyebrow:"5 / 5 &middot; సిద్ధమా?",
+    title:"ఇక ప్రారంభిద్దాం!",
+    body:`<p>ఎప్పుడైనా ఈ సూచనలని మళ్లీ చూడాలంటే మీ కుడివైపు పైన ఉన్న <b>?</b> మీట నొక్కండి. అవిఘ్నమస్తు! విజయోస్తు!!</p>`
+  }
+];
+let tutIdx = 0;
+
+function renderTutStep(){
+  document.getElementById('tut-dots').innerHTML = tutSteps.map((_,i)=>
+    `<span class="${i===tutIdx?'active':''}"></span>`).join('');
+  const step = tutSteps[tutIdx];
+  document.getElementById('tut-body').innerHTML =
+    `<div class="tut-eyebrow">${step.eyebrow}</div><h3>${step.title}</h3>${step.body}`;
+  document.getElementById('tut-back').disabled = tutIdx===0;
+  document.getElementById('tut-next').textContent = tutIdx===tutSteps.length-1 ? 'ప్రారంభిద్దాం' : 'తర్వాత →';
+}
+
+function openTutorial(){
+  tutIdx = 0;
+  renderTutStep();
+  document.getElementById('tutorial-overlay').classList.add('open');
+}
+function closeTutorial(){
+  document.getElementById('tutorial-overlay').classList.remove('open');
+}
+
+document.getElementById('tut-next').addEventListener('click', ()=>{
+  if(tutIdx < tutSteps.length-1){ tutIdx++; renderTutStep(); }
+  else { closeTutorial(); }
+});
+document.getElementById('tut-back').addEventListener('click', ()=>{
+  if(tutIdx>0){ tutIdx--; renderTutStep(); }
+});
+document.getElementById('tut-skip').addEventListener('click', closeTutorial);
+document.getElementById('help-btn').addEventListener('click', openTutorial);
+
+renderHome();
+openTutorial();
+</script>
+</body>
+</html>
